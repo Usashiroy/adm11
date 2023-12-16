@@ -1,7 +1,7 @@
-streamlit
-pandas
-numpy
-xgboost
-lightgbm
-plotly
-seaborn
+streamlit==1.17.1
+pandas==1.5.4
+numpy==1.23.5
+xgboost==1.7.1
+lightgbm==3.3.4
+plotly==5.9.0
+seaborn==0.13.2
