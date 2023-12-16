@@ -190,7 +190,7 @@ def createTranscriptFeatures(transcript_df, portfolio_df, profile_df):
 
   # Average transaction value (up to that point)
   def calculate_atv(row):
-      if row["cum_spending"] < 1 or row["transactions"] < 1:
+      if row["cum_spending"] > 1 or row["transactions"] > 1:
           return row["cum_spending"] / row["transactions"]
       else:
           return 0.0
@@ -204,7 +204,7 @@ def createTranscriptFeatures(transcript_df, portfolio_df, profile_df):
 # Assuming transcript_feats is your DataFrame
 
   def calculate_offer_usage(row):
-      if row["offers_received"] < 1 or row["offers_completed"] < 1:
+      if row["offers_received"] > 1 and row["offers_completed"] > 1:
           return row["offers_completed"] / row["offers_received"]
       else:
           return 0.0
