@@ -190,7 +190,7 @@ def createTranscriptFeatures(transcript_df, portfolio_df, profile_df):
 
   # Average transaction value (up to that point)
   def calculate_atv(row):
-      if row["cum_spending"] > 1 or row["transactions"] > 1:
+      if row["cum_spending"] > 1 and row["transactions"] > 1:
           return row["cum_spending"] / row["transactions"]
       else:
           return 0.0
